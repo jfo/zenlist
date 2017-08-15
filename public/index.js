@@ -6,7 +6,7 @@
 
     const MenuItem = (props) => {
         return <li>
-            <p>{ props.item.name }</p>
+            <p style={{color:(!props.item.has_articles_in_branch?'red':'black')}} >{ props.item.name }</p>
             <ul>{
                 props.item.children.map((e,i) => {
                     if (e.class == "menuitem" && (e.has_articles_in_branch || props.editing)) {
@@ -44,11 +44,9 @@
         render() {
             return <div>
                 <button onClick={
-                    () => this.setState({
-                        editing: !this.state.editing
-                    })
+                    () => this.setState({ editing: !this.state.editing })
                 } >{this.state.editing ? "save" : "edit"}</button>
-                <ul style={{color: (this.state.editing ? 'red' : 'black')}}>
+                <ul>
                    <MenuItem editing={ this.state.editing } item={ this.state.root }  />
                 </ul>
             </div>
