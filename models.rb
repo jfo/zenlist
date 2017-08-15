@@ -50,4 +50,3 @@ class Menu
         menuitem.has_articles_in_branch
     end
 end
-Menu.new(1)
