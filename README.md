@@ -50,6 +50,10 @@ with its children. I've also appended metadata to those nodes as to whether or
 not there is an article in their branch, which the view will use to decide
 whether or not to render them. That could have also happened on the client.
 
+There is no database level check against circular references, this would need
+to be validated by the application code before storage to protect against
+infinite loops in the populating functions.
+
 This is the simplest way to structure this data but also the most naive; it
 necessitates many trips to the database. That shouldn't be an issue as long as
 there is a sane ORM (that persists db connections in some way at least over the
