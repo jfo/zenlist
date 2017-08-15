@@ -1,0 +1,3 @@
+task :run do
+    system 'sqlite3 data.db < db_setup.sql & bundle exec ruby server.rb && rm data.db'
+end
