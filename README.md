@@ -6,7 +6,10 @@ You'll need [SQLite](https://www.sqlite.org/)
 
 From there, `bundle install` and then `rake run` whould set up a db with dummy
 data and run a server. It drops the db on close; this is not a fully functional
-application
+application.
+
+Also, you'll need to run this in an up to date ES6 running browser. I'm not
+compiling the source for older browsers.
 
 # TokenBucket
 
