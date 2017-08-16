@@ -2,6 +2,8 @@ require 'test/unit'
 require_relative 'tokenbucket'
 
 class TokenBucket_Test < Test::Unit::TestCase
+    self.test_order = :defined
+
     def setup
         @bucket = TokenBucket.new(r: 100, b: 5)
     end
